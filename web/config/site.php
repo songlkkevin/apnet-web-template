@@ -1,0 +1,51 @@
+<?php
+// 每届首先修改此文件。所有文本均为纯文本；链接未确定时留空，不要填 #。
+return [
+    'year' => 'YYYY',
+    'edition' => '[Nth]',
+    'name' => 'Asia-Pacific Workshop on Networking',
+    'dates' => 'Dates to be announced',
+    'location' => '[Host city, country]',
+    'venue' => '[Conference venue]',
+    'timezone' => '[Deadline time zone]',
+    'contact_email' => '',
+    // 正式网址，包含项目子路径，不带末尾斜杠。留空时不输出 canonical / og:url。
+    'base_url' => '',
+    'description' => 'A forum for early ideas in computer networking and systems, bringing together researchers from the Asia-Pacific region and around the world.',
+    // 图片路径相对于 web/。留空时使用通用 SVG 占位图，尺寸比例沿用原站图片。
+    'logo' => '',
+    'banner' => '',
+    'banner_alt' => 'Conference host city',
+    'links' => [
+        'submission' => '',
+        'poster_submission' => '',
+        'registration' => '',
+        'proceedings' => '',
+        'paper_template' => '',
+        'grant_application' => '',
+        'award_nomination' => '',
+        'venue_map' => '',
+        'hotel_booking' => '',
+    ],
+    // visible 仅控制菜单显示；页面仍可通过网址访问，也会生成静态文件。
+    'navigation' => [
+        ['page' => 'index', 'label' => 'Home', 'visible' => true],
+        ['page' => 'registration', 'label' => 'Registration', 'visible' => true],
+        ['page' => 'apnetprogram', 'label' => 'Program', 'heading' => 'Technical Program', 'visible' => true],
+        ['page' => 'keynote', 'label' => 'Keynote Talk', 'visible' => true],
+        ['page' => 'industry', 'label' => 'Industry Spotlight Talks', 'visible' => true],
+        ['page' => 'sigcommnsdi', 'label' => 'Academic Insight Talks', 'visible' => true],
+        ['page' => 'accept', 'label' => 'Accepted Papers List', 'visible' => true],
+        ['page' => 'acceptposters', 'label' => 'Accepted Posters List', 'visible' => true],
+        ['page' => 'grant', 'label' => 'Travel Grants Information', 'heading' => 'Student and Young Scholar Travel grants', 'visible' => true],
+        ['page' => 'cfp', 'label' => 'Call for Papers', 'visible' => true],
+        ['page' => 'cfposter', 'label' => 'Call for Posters', 'visible' => true],
+        ['page' => 'awards-nomination', 'label' => 'Call for Awards Nomination', 'visible' => true],
+        ['page' => 'local', 'label' => 'Local Information', 'visible' => true],
+        ['page' => 'visa', 'label' => 'Visa Information', 'visible' => false],
+        ['page' => 'pc', 'label' => 'Program Committee', 'visible' => true],
+        ['page' => 'organization', 'label' => 'Organization Committee', 'visible' => true],
+        ['page' => 'supporters', 'label' => 'Supporters', 'heading' => 'Industrial Supporters', 'visible' => false],
+        ['page' => 'pastevent', 'label' => 'Past Events', 'heading' => 'Past events', 'visible' => false],
+    ],
+];

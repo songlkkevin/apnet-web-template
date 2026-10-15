@@ -1,0 +1,8 @@
+*~
+*.sublime*
+.DS_Store
+/static_site/
+/tmp/
+.apnet-build-*/
+__pycache__/
+*.py[cod]
