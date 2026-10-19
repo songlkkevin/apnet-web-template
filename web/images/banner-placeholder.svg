@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2752 1536" role="img" aria-label="Conference image placeholder">
-  <rect width="2752" height="1536" fill="#f0f3f1"/>
-  <rect x="25" y="25" width="2702" height="1486" fill="none" stroke="#87b5a2" stroke-width="4" stroke-dasharray="20 16"/>
-  <g text-anchor="middle" fill="#3d6354" font-family="sans-serif">
+  <rect width="2752" height="1536" fill="#f6f2f9"/>
+  <rect x="25" y="25" width="2702" height="1486" fill="none" stroke="#76608c" stroke-width="4" stroke-dasharray="20 16"/>
+  <g text-anchor="middle" fill="#523a6c" font-family="sans-serif">
     <text x="1376" y="740" font-size="110">[Host city / conference image]</text>
     <text x="1376" y="870" font-size="62">APNet</text>
   </g>

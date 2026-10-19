@@ -5,7 +5,7 @@ $talks = $content['talks'][$page] ?? [];
 <style>
   /* 基础样式 */
   .container {
-    background-color: #eaeaea;
+    background-color: var(--color-surface);
     margin: 2em;
     border-radius: 10px;
     display: flex;

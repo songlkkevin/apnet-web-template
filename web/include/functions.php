@@ -72,7 +72,7 @@ function render_person_rows(array $people): void
         $linked = trim($person['url']) !== '';
         $open = $linked ? '<a href="' . e($person['url']) . '" target="_blank" rel="external noopener" class="nodecor">' : '';
         $close = $linked ? '</a>' : '';
-        echo '<li data-icon="false"' . ($linked ? ' style="background-color: #f2f2f2;"' : '') . '><div class="ui-grid-a">';
+        echo '<li data-icon="false"' . ($linked ? ' style="background-color: var(--color-surface);"' : '') . '><div class="ui-grid-a">';
         echo '<div class="ui-block-a">' . $open . '<p>' . e($person['name']) . '</p>' . $close . '</div>';
         echo '<div class="ui-block-b">' . $open . '<p>' . e($person['affiliation']) . '</p>' . $close . '</div>';
         echo '</div></li>';

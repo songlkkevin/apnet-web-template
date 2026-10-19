@@ -20,7 +20,7 @@ $canonical = $site['base_url'] === '' ? '' : rtrim($site['base_url'], '/') . '/'
   <meta property="og:image" content="<?= e(rtrim($site['base_url'], '/') . '/' . $site['banner']) ?>">
 <?php endif; ?>
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
   <link rel="stylesheet" href="css/style.css">
   <!-- Original APNet paragraph styling, previously in this header. -->
@@ -28,8 +28,8 @@ $canonical = $site['base_url'] === '' ? '' : rtrim($site['base_url'], '/') . '/'
     p {
       text-indent: 0 !important;
       margin-top: 0 !important;
-      margin-bottom: 0.6em !important;
-      line-height: 1.35 !important;
+      margin-bottom: 0.85em !important;
+      line-height: 1.65 !important;
     }
   </style>
   <script src="js/jquery-1.11.2.min.js"></script>
@@ -38,9 +38,14 @@ $canonical = $site['base_url'] === '' ? '' : rtrim($site['base_url'], '/') . '/'
 </head>
 <body>
 <div data-role="page" data-theme="a" class="main-page">
-  <div class="header" data-role="header" data-theme="a" data-position="inline">
-    <div><a href="<?= e(page_url('index')) ?>"><img src="<?= e($site['logo'] ?: 'images/logo-placeholder.svg') ?>" alt="<?= e(event_name()) ?>"></a></div>
-    <a href="#navigation" class="ui-btn-right" data-corners="true" data-icon="grid" id="menu-toggle">MENU</a>
+  <div class="header topbar" data-role="header" data-theme="a" data-position="inline">
+    <div class="topbar-inner">
+      <div class="topbar-brand">
+        <a class="brand-link" href="<?= e(page_url('index')) ?>"><img src="<?= e($site['logo'] ?: 'images/logo-placeholder.svg') ?>" alt="<?= e(event_name()) ?>"></a>
+        <button type="button" class="ui-btn-right" data-corners="true" data-icon="grid" id="menu-toggle" aria-controls="navigation" aria-expanded="false">MENU</button>
+      </div>
+      <?php require __DIR__ . '/menu.php'; ?>
+    </div>
   </div>
   <div data-role="content" class="ui-content">
     <main id="main" class="content-primary">

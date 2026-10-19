@@ -4,6 +4,7 @@
 <p>Registration deadline: <?= e($content['registration']['deadline']) ?>.</p>
 <p>&nbsp;</p>
 <p style="text-align: justify;"><?= e($content['registration']['intro']) ?></p>
+<div class="registration-scroll" role="region" aria-label="Registration fees" tabindex="0">
 <ul data-role="listview" data-inset="true" data-theme="a" data-content-theme="a" class="registration">
   <li data-role="list-divider">Registration fee (<?= e($content['registration']['currency']) ?>)</li>
   <li data-icon="false"><div class="ui-grid-a">
@@ -21,4 +22,5 @@
   </div></li>
 <?php endforeach; ?>
 </ul>
+</div>
 <?php render_sections('registration'); ?>

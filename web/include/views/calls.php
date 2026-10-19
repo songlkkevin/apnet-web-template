@@ -95,7 +95,7 @@ $call_portal = static function (string $label, string $url, string $attributes =
 <br><h2><?= e($call['submission_title']) ?></h2><br>
 <p style="text-align: justify; text-indent: 2em;"><?= $call_portal($call['submission_label'], $site['links']['poster_submission']) ?> <?= $call_text($call['submission_note']) ?></p>
 <br><h2><?= e($call['presentation_title']) ?></h2><br>
-<p style="text-align: justify; text-indent: 2em;"><?= e($call['presentation_before']) ?><font color="red"><?= e($call['presentation_emphasis']) ?></font><?= e($call['presentation_after']) ?></p>
+<p style="text-align: justify; text-indent: 2em;"><?= e($call['presentation_before']) ?><span class="highlighttext"><?= e($call['presentation_emphasis']) ?></span><?= e($call['presentation_after']) ?></p>
 <br>
 <p style="text-align: justify; text-indent: 2em;"><b><?= $call_text($call['presentation_notice']) ?></b></p>
 <h2>Important Dates</h2>
@@ -107,7 +107,7 @@ $call_portal = static function (string $label, string $url, string $attributes =
 <h2>Poster Chairs</h2>
 <ul data-role="listview" data-inset="true" data-theme="a" data-content-theme="a" class="datetbl">
 <?php foreach ($content['organization']['Poster Chairs'] ?: [['name' => '[Poster chair name]', 'affiliation' => '[Institution]', 'url' => '']] as $person): ?>
-  <li data-icon="false"<?= trim($person['url']) !== '' ? ' style="background-color: #f2f2f2;"' : '' ?>>
+  <li data-icon="false"<?= trim($person['url']) !== '' ? ' style="background-color: var(--color-surface);"' : '' ?>>
     <div class="ui-grid-a">
       <div class="ui-block-a">
         <?php if (trim($person['url']) !== ''): ?><a href="<?= e($person['url']) ?>" target="_blank" rel="external" class="nodecor"><?php endif; ?>
@@ -137,7 +137,7 @@ $call_portal = static function (string $label, string $url, string $attributes =
 <h2>Important dates</h2>
 <ul class="custom-list">
 <?php foreach ($call['dates'] as $date): ?>
-  <li><strong><?= e($date['label']) ?></strong> <font color="#FF0000"><?= e($date['date']) ?></font></li>
+  <li><strong><?= e($date['label']) ?></strong> <span class="highlighttext"><?= e($date['date']) ?></span></li>
 <?php endforeach; ?>
 </ul>
 <?php foreach ($call['programs'] as $index => $program): ?>

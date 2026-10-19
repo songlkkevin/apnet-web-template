@@ -9,6 +9,8 @@ A reusable website template for APNet conferences. Conference details and conten
 
 No npm installation is required. jQuery 1.11.2, jQuery Mobile 1.4.5, and their styles and icons are included. Raleway is loaded from Google Fonts over HTTPS, with a sans-serif fallback.
 
+The template includes the refreshed APNet design: a purple and gold theme, single-row sticky navigation with a final More dropdown and a collapsible mobile menu, card-based content, a two-column news and dates layout on desktop, and a conference footer. Generic SVG artwork keeps the template independent of any conference year or host city.
+
 ## Quick start
 
 1. Create a repository from this template or copy the source.
@@ -37,6 +39,10 @@ Edit `web/config/site.php` to set the year, edition, conference name, dates, loc
 | `links` | Submission, registration, proceedings, and other conference links. Leave unavailable links empty. |
 | `navigation` | Page identifiers, menu labels, optional page `heading`, and visibility. Setting `visible` to `false` hides a menu entry; the page remains accessible and is still built. |
 
+The first four visible navigation entries appear directly in the bar; remaining entries appear in the final **More** dropdown. Reorder the configuration to choose the primary links. The dropdown is omitted when there are four or fewer visible entries.
+
+Customize the theme colors, shadows, and corner radii in the `:root` variables at the top of `web/css/style.css`. The configured logo appears in the navigation bar; the banner appears on the homepage. Footer details come from the conference configuration, and the homepage notice is shown when `notice['text']` is nonempty.
+
 ## Content
 
 Edit `web/data/content.php` to manage the conference content. Copy the existing array structures to add entries. Text is escaped automatically, so use plain text rather than HTML. Empty arrays represent lists that have not been announced.
@@ -55,7 +61,7 @@ Edit `web/data/content.php` to manage the conference content. Copy the existing 
 
 Edit `web/data/calls.php` for paper, poster, travel grant, and award calls. Paragraphs accept plain text or arrays of text segments with an optional `bold` flag, as shown in the examples.
 
-Registration uses four `categories` and fee rows with an `amounts` value for each category, preserving the original five-column layout. Speaker photos and sponsor logos fall back to generic images when their paths are empty. The optional Supporters page groups sponsors by `tier`; an optional numeric `display_width` controls each logo’s percentage width on that page.
+Registration uses four `categories` and fee rows with an `amounts` value for each category, preserving the original five-column layout with horizontal scrolling on narrow screens. Speaker photos and sponsor logos fall back to generic images when their paths are empty. The optional Supporters page groups sponsors by `tier`; an optional numeric `display_width` controls each logo’s percentage width on that page.
 
 Sections can include optional links:
 

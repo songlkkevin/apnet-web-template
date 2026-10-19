@@ -10,16 +10,10 @@ $(document).on("pagebeforeshow", function () {
     newslibtn.siblings().slice(6).hide();
     newslibtn.find("a").text("Older News");
     newslibtn.find("span").toggleClass("ui-icon-plus", true).toggleClass("ui-icon-minus", false);
-    sizeNavigation();
+    $.mobile.activePage.find("#navigation").removeClass("nav-open");
+    $.mobile.activePage.find("#menu-toggle").attr("aria-expanded", "false");
+    $.mobile.activePage.find(".nav-dropdown").prop("open", false);
 });
-
-// Keep the original sidebar bottom spacing without the unused sponsor ticker.
-function sizeNavigation() {
-    if ($.mobile.activePage) {
-        $.mobile.activePage.find(".leftnav").css("padding-bottom", 1.25 * ($(window).height() / 12 + 30) + "px");
-    }
-}
-$(window).on("resize", sizeNavigation);
 
 $(document).on("pageshow", function () {
     var content = $.mobile.activePage.find(".ui-content");
@@ -28,7 +22,31 @@ $(document).on("pageshow", function () {
 
 $(document).on("click", "#menu-toggle", function (event) {
     event.preventDefault();
-    $.mobile.silentScroll($.mobile.activePage.find(".leftnav").position().top);
+    var nav = $.mobile.activePage ? $.mobile.activePage.find("#navigation") : $("#navigation");
+    nav.toggleClass("nav-open");
+    $(this).attr("aria-expanded", nav.hasClass("nav-open") ? "true" : "false");
+    if (!nav.hasClass("nav-open")) {
+        nav.find(".nav-dropdown").prop("open", false);
+    }
+});
+
+$(document).on("click", function (event) {
+    if (!$(event.target).closest(".nav-dropdown").length) {
+        $(".nav-dropdown[open]").prop("open", false);
+    }
+});
+
+$(document).on("keydown", function (event) {
+    if (event.key === "Escape") {
+        var dropdown = $(".ui-page-active .nav-dropdown[open]");
+        if (dropdown.length) {
+            if (dropdown.has(document.activeElement).length) {
+                dropdown.children("summary").trigger("focus");
+            }
+            dropdown.prop("open", false);
+            event.preventDefault();
+        }
+    }
 });
 
 function showall() {
